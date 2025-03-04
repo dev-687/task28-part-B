@@ -6,12 +6,13 @@ import TodoItem from './Components/TodoItem'
 import axios from 'axios'
 function App() {
   const [todos, setTodos] = useState([])
+  const baseurl="https://task28-part-a-8h6g.vercel.app";
   const addTodo = (todo) => { setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev]) }
 
 
   const updateTodo =async (id, todo) => {
     try {
-      await axios.put(`http://localhost:5000/api/v1/todos/${id}`, {
+      await axios.put(`${baseurl}/api/v1/todos/${id}`, {
         task: todo.todo
       })
       setTodos((prev) => prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo)))
@@ -24,7 +25,7 @@ function App() {
   }
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/todos/${id}`);
+      await axios.delete(`${baseurl}/api/v1/todos/${id}`);
 
       setTodos((prev) => prev.filter((prevTodo) => prevTodo._id !== id));
 
@@ -34,7 +35,7 @@ function App() {
     }
   }
   const toggleComplete = async (id, status) => {
-    const todo = await axios.put(`http://localhost:5000/api/v1/todos/${id}`, {
+    const todo = await axios.put(`${baseurl}/api/v1/todos/${id}`, {
       completed: !status
     })
     setTodos((prev) =>
@@ -45,7 +46,7 @@ function App() {
   }
 
   useEffect(() => {
-    const todos = axios.get(`http://localhost:5000/api/v1/todos/`)
+    const todos = axios.get(`${baseurl}/api/v1/todos/`)
       .then((res) => setTodos(res.data))
 
     if (todos && todos.length > 0) {

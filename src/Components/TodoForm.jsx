@@ -5,14 +5,14 @@ import axios from 'axios';
 function TodoForm() {
     const [todo, setTodo] = useState("")
     const {addTodo} = useTodo()
-
+    const baseurl="https://task28-part-a-8h6g.vercel.app";
     const add=async (e)=>{
         console.log(todo);
         
         e.preventDefault()
         if(!todo) return
         try {
-            const res = await axios.post("http://localhost:5000/api/v1/todos", {
+            const res = await axios.post(`${baseurl}/api/v1/todos`, {
               task: todo, 
               completed: false,
             });
