@@ -59,8 +59,11 @@ function TodoItem({ todo }) {
                 </button>
             </div>
             <p className="text-xs text-gray-600 mt-1">
-            {new Date(todo.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}  
+           Created On {new Date(todo.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}  
             {" "} {new Date(todo.createdAt).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: true })}
+            {" "}
+            Updated On {new Date(todo.updatedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}  
+            {" "} {new Date(todo.updatedAt).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: true })}
             </p>
         </div>
     );
