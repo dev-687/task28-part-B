@@ -52,7 +52,7 @@ function TodoItem({ todo }) {
                 </button>
                 {/* Delete Todo Button */}
                 <button
-                    className="inline-flex w-8 h-8 flex-shrink-0 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 disabled:opacity-50"
+                    className="inline-flex w-8 h-8 flex-shrink-0 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 disabled:opacity-50 ml-1"
                     onClick={() => deleteTodo(todo._id)}
                 >
                     ❌
