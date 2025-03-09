@@ -59,10 +59,10 @@ function TodoItem({ todo }) {
                 </button>
             </div>
             <p className="text-xs text-gray-600 mt-1">
-           Created {new Date(todo.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}  
+           Cr {new Date(todo.createdAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}  
             {" "} {new Date(todo.createdAt).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: true })}
-            </p><p className="text-xs text-gray-600 mt-1">
-            Completed {new Date(todo.updatedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}  
+            {/* </p><p className="text-xs text-gray-600 mt-1"> */}
+            Comp {new Date(todo.updatedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}  
             {" "} {new Date(todo.updatedAt).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: true })}
             </p>
         </div>
